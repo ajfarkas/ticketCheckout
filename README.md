@@ -1,2 +1,5 @@
-# ticketCheckout
-Code Challenge
+# Ticket Checkout
+
+Code challenge for front end SWE role
+
+
