@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Checkout = ({ setActive }) => {
+const Checkout = ({ setActive, cartData }) => {
 	return (
 		<aside id="checkout">
 			<button
@@ -11,6 +11,7 @@ const Checkout = ({ setActive }) => {
 				}}
 			></button>
 			<p>checkout</p>
+			<p>{JSON.stringify(cartData)}</p>
 		</aside>
 	);
 };

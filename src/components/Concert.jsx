@@ -1,39 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Concert = ({
 	id,
 	artist,
 	locale,
 	date,
-	price
+	price,
+	amendCartData,
+	setCartActive,
 }) => {
-	const onAddToCart = () => {
-		console.log(id, 'added to cart');
+	const [ticketAmount, setTicketAmount] = useState(0);
+
+	const onChangeTicketAmount = e => {
+		const { currentTarget } = e;
+		if (!currentTarget.checkValidity()) {
+			currentTarget.value = 1;
+		}
+		const amount = parseInt(currentTarget.value);
+		setTicketAmount(amount);
 	};
+
+	const onUpdateCart = () => {
+		amendCartData({ id, artist, locale, date, price, amount: ticketAmount});
+		setCartActive(true);
+	};
+
+	const dateStr = (new Date(date)).toDateString().replace(/\s\d{4}$/, d => `, ${d}`);
+	const price2Decimals = price.toPrecision(parseInt(price).toString().length + 2);
 
 	return (
 		<div className="concert">
 			<h3 className="concert_artist">{artist}</h3>
 			<div className="concert_details">
-				<p className="concert_location">{locale}</p>
-				<p className="concert_date">{date}</p>
-				<p className="concert_price">{price}</p>
+				<p className="concert_location">{`@ ${locale}`}</p>
+				<p className="concert_date">{dateStr}</p>
+				<p className="concert_price">{`$${price2Decimals}`}</p>
 			</div>
-			<form>
+			<form className="concert_form">
 				<fieldset>
-					<label htmlFor={`amt-${id}`} className="ticket_amt-label">
+					<label htmlFor={`amt-${id}`} className="ticket-amt_label">
 						Number of tickets:
 					</label>
 					<input
-						className="ticket_amt"
+						className="ticket-amt"
 						id={`amt-${id}`}
 						type="number"
-						min="1"
+						min="0"
 						max="12"
 						step="1"
 						defaultValue="1"
+						onChange={onChangeTicketAmount}
 					/>
-					<button className="concert-add" type="button" onClick={onAddToCart}>Add to cart</button>
+					<button
+						className="concert_add"
+						type="button"
+						onClick={onUpdateCart}
+					>
+						Update cart
+					</button>
 				</fieldset>
 			</form>
 		</div>

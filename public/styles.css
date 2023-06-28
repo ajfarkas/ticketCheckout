@@ -11,7 +11,7 @@ html {
 #app {
   width: calc(100vw - 24px);
   max-width: 600px;
-  margin: calc(50vw - 50% + 12px);
+  margin: 1px auto;
 }
 
 h1 {
@@ -87,7 +87,23 @@ button {
 .concert {
   border: 1px solid #222;
   width: 90%;
+  padding: 8px;
   margin: 16px 0 16px 5%;
+}
+
+.concert_form {
+  margin-top: 1ex;
+}
+.concert_form fieldset {
+  padding: 4px;
+}
+
+.ticket-amt_label {
+  margin-right: 0.5em;
+}
+
+.concert_add {
+  margin-left: 1em;
 }
 
 /*# sourceMappingURL=styles.css.map */

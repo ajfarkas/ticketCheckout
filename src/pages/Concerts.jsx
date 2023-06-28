@@ -1,9 +1,14 @@
 import React from 'react';
 import Concert from '../components/Concert.jsx';
 
-const Concerts = ({ concertData }) => {
+const Concerts = ({ concertData, amendCartData, setCartActive }) => {
 	const allConcerts = concertData.map(data => (
-		<Concert {...data} key={`concert-${data.id}`}/>
+		<Concert
+			{...data}
+			amendCartData={amendCartData}
+			setCartActive={setCartActive}
+			key={`concert-${data.id}`}
+		/>
 	));
 
 	return (
