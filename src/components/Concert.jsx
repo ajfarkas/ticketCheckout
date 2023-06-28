@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { formatDateStr, priceTo2Decimals } from '../helpers.js';
 
 const Concert = ({
 	id,
@@ -9,24 +10,23 @@ const Concert = ({
 	amendCartData,
 	setCartActive,
 }) => {
-	const [ticketAmount, setTicketAmount] = useState(0);
+	const [ticketAmount, setTicketAmount] = useState(1);
 
 	const onChangeTicketAmount = e => {
 		const { currentTarget } = e;
-		if (!currentTarget.checkValidity()) {
-			currentTarget.value = 1;
-		}
+		if (!currentTarget.checkValidity()) currentTarget.value = 1;
 		const amount = parseInt(currentTarget.value);
 		setTicketAmount(amount);
 	};
 
 	const onUpdateCart = () => {
-		amendCartData({ id, artist, locale, date, price, amount: ticketAmount});
+		const totalPrice = price * ticketAmount;
+		amendCartData({ id, artist, locale, date, price, amount: ticketAmount, totalPrice});
 		setCartActive(true);
 	};
 
-	const dateStr = (new Date(date)).toDateString().replace(/\s\d{4}$/, d => `, ${d}`);
-	const price2Decimals = price.toPrecision(parseInt(price).toString().length + 2);
+	const dateStr = formatDateStr(date);
+	const price2Decimals = priceTo2Decimals(price);
 
 	return (
 		<div className="concert">
@@ -48,7 +48,7 @@ const Concert = ({
 						min="0"
 						max="12"
 						step="1"
-						defaultValue="1"
+						defaultValue={1}
 						onChange={onChangeTicketAmount}
 					/>
 					<button

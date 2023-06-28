@@ -38,3 +38,36 @@
 		transform: rotate(-45deg);
 	}
 }
+
+.checkout-container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	padding: 4px 8px;
+}
+
+.checkout-breakdown {
+	flex: 1 1 100%;
+
+	h2 {
+		margin-left: 0;
+	}
+
+	& > div {
+		margin-top: 2ex;
+	}
+}
+
+.breakdown-total {
+	display: flex;
+	justify-content: space-between;
+}
+
+.payment-breakdown {
+	flex: 1 1 100%;
+}
+
+#payment-submit {
+	display: block;
+}

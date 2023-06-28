@@ -1,0 +1,15 @@
+.ticket {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 1ex 8rem;
+	box-sizing: border-box;
+}
+
+.ticket-info {
+	flex: 1 1 auto;
+}
+
+.ticket-total {
+	flex: 0 1 auto;
+}

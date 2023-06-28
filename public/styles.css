@@ -25,6 +25,10 @@ h2 {
 }
 
 h3 {
+  font-size: 20rem;
+}
+
+h4 {
   font-size: 18rem;
 }
 
@@ -84,6 +88,37 @@ button {
   transform: rotate(-45deg);
 }
 
+.checkout-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 4px 8px;
+}
+
+.checkout-breakdown {
+  flex: 1 1 100%;
+}
+.checkout-breakdown h2 {
+  margin-left: 0;
+}
+.checkout-breakdown > div {
+  margin-top: 2ex;
+}
+
+.breakdown-total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-breakdown {
+  flex: 1 1 100%;
+}
+
+#payment-submit {
+  display: block;
+}
+
 .concert {
   border: 1px solid #222;
   width: 90%;
@@ -104,6 +139,22 @@ button {
 
 .concert_add {
   margin-left: 1em;
+}
+
+.ticket {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1ex 8rem;
+  box-sizing: border-box;
+}
+
+.ticket-info {
+  flex: 1 1 auto;
+}
+
+.ticket-total {
+  flex: 0 1 auto;
 }
 
 /*# sourceMappingURL=styles.css.map */
