@@ -1,0 +1,19 @@
+@use "sass:math";
+
+// COLORS
+$ink: #222;
+$white: #fdfaf3;
+$grey: #aeaeae;
+
+$red: #f00;
+$blue: #bfedf5;
+
+$primary: $blue;
+
+$font-color: $ink;
+$background: $white;
+$warn: $red;
+
+// NUMBERS
+$body-margin: 12px;
+$half-body-margin: math.div($body-margin, 2);

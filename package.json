@@ -4,8 +4,9 @@
   "author": "AJ Farkas",
   "main": "dist/index.js",
   "scripts": {
-    "start": "sass --update ./sass:./public && webpack",
-    "sass": "sass --watch ./sass:./public",
+    "start": "sass --update ./sass/styles.scss:./public/styles.css && webpack",
+    "sass_watch": "sass --watch ./sass/styles.scss:./public/styles.css",
+    "sass_build": "sass ./sass/styles.scss:./public/styles.css",
     "webpack": "webpack --watch",
     "lint": "eslint src/**/*"
   },

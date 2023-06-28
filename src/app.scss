@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+}
+
+html {
+	// this allows me to use `rem` proportionally to `px`
+	font-size: 6.25%;
+	font-family: 'Open Sans, sans-serif';
+	color: $font-color;
+}
+
+#app {
+	width: calc(100vw - ($body-margin * 2));
+	max-width: 600px;
+	margin: calc(50vw - 50% + $body-margin);
+}
+
+h1 {
+	font-size: 32rem;
+	margin-bottom: 0.5em;
+}
+h2 {
+	font-size: 24rem;
+	margin-left: 8px;
+}
+h3 {
+	font-size: 18rem;
+}
+p, label, button {
+	font-size: 16rem;
+}
+
+button {
+	appearance: none;
+	padding: 4px 8px;
+	font-size: 14rem;
+	border: 1px solid $grey;
+	border-radius: 4px;
+	background-color: $primary;
+}
+
+#checkout-button {
+	position: fixed;
+	top: 0.8em;
+	right: 1em;
+}

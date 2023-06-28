@@ -1,9 +1,9 @@
 import React from 'react';
-import Concert from '../components/concert.jsx';
+import Concert from '../components/Concert.jsx';
 
 const Concerts = ({ concertData }) => {
 	const allConcerts = concertData.map(data => (
-		<Concert {...data} />
+		<Concert {...data} key={`concert-${data.id}`}/>
 	));
 
 	return (

@@ -1,0 +1,40 @@
+#checkout {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	right: calc(50vw - 50%);
+	height: 90vh;
+	width: 400rem;
+	max-width: 95%;
+	background-color: $background;
+	outline: 1px solid $font-color;
+}
+
+#checkout-close {
+	width: 20rem;
+	height: 20rem;
+	padding: 4px;
+	margin: {
+		top: 8px;
+		left: 8px;
+	}
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		width: 20rem;
+		height: 2rem;
+		background-color: $font-color;
+		transform-origin: calc(50% - 1rem);
+	}
+	&:before {
+		transform: rotate(45deg);
+	}
+	&:after {
+		transform: rotate(-45deg);
+	}
+}
